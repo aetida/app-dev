@@ -1,8 +1,9 @@
-from sqlalchemy import select, update, delete
-from sqlalchemy.ext.asyncio import AsyncSession
-from typing import Optional, List
+from typing import List, Optional
+
 from app.models import User
 from app.schemas import UserCreate, UserUpdate
+from sqlalchemy import delete, select, update
+from sqlalchemy.ext.asyncio import AsyncSession
 
 
 class UserRepository:

@@ -1,12 +1,14 @@
 import os
 from contextlib import asynccontextmanager
-from dotenv import load_dotenv
-from litestar import Litestar
-from litestar.di import Provide
-from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
+
 from app.controllers.user_controller import UserController
 from app.repositories.user_repository import UserRepository
 from app.services.user_service import UserService
+from dotenv import load_dotenv
+from litestar import Litestar
+from litestar.di import Provide
+from sqlalchemy.ext.asyncio import (AsyncSession, async_sessionmaker,
+                                    create_async_engine)
 
 # Загрузка переменных окружения
 load_dotenv()

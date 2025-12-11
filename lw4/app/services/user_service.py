@@ -1,7 +1,8 @@
-from typing import Optional, List
+from typing import List, Optional
+
+from app.models import User
 from app.repositories.user_repository import UserRepository
 from app.schemas import UserCreate, UserUpdate
-from app.models import User
 
 
 class UserService:

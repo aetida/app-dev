@@ -1,16 +1,18 @@
-import os
 import logging
+import os
 from contextlib import asynccontextmanager
+
+from app.controllers.user_controller import UserController
+from app.models import Base
+from app.repositories.user_repository import UserRepository
+from app.services.user_service import UserService
 from dotenv import load_dotenv
 from litestar import Litestar, Request, Response
 from litestar.di import Provide
-from litestar.status_codes import HTTP_500_INTERNAL_SERVER_ERROR
 from litestar.exceptions import HTTPException
-from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
-from app.controllers.user_controller import UserController
-from app.repositories.user_repository import UserRepository
-from app.services.user_service import UserService
-from app.models import Base
+from litestar.status_codes import HTTP_500_INTERNAL_SERVER_ERROR
+from sqlalchemy.ext.asyncio import (AsyncSession, async_sessionmaker,
+                                    create_async_engine)
 
 # Настройка логирования
 logging.basicConfig(level=logging.WARNING)

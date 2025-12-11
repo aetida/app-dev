@@ -1,9 +1,9 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, joinedload
-from sqlalchemy.exc import IntegrityError
-from models import User, Address, Product, Order, Base
 import random
 
+from models import Address, Base, Order, Product, User
+from sqlalchemy import create_engine
+from sqlalchemy.exc import IntegrityError
+from sqlalchemy.orm import joinedload, sessionmaker
 
 engine = create_engine("postgresql://postgres:postgres@localhost/postgres")
 Session = sessionmaker(bind=engine)

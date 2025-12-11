@@ -1,9 +1,10 @@
 from typing import List, Optional
-from litestar import Controller, get, post, put, delete
-from litestar.params import Parameter
-from litestar.exceptions import NotFoundException
+
+from app.schemas import UserCreate, UserResponse, UserUpdate
 from app.services.user_service import UserService
-from app.schemas import UserCreate, UserUpdate, UserResponse
+from litestar import Controller, delete, get, post, put
+from litestar.exceptions import NotFoundException
+from litestar.params import Parameter
 
 
 class UserController(Controller):
